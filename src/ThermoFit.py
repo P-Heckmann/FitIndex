@@ -1,21 +1,11 @@
 import pandas as pd
 
-plagio_meas = pd.read_excel(
-    r"C:\Users\paulh\Desktop\FitIndex\Data\Plagioclase_composition.xlsx"
-)
-clino_meas = pd.read_excel(
-    r"C:\Users\paulh\Desktop\FitIndex\Data\Clinopyroxene_composition.xlsx"
-)
-
-model_1000 = pd.read_excel(r"C:\Users\paulh\Desktop\FitIndex\Results_1000.xlsx")
-model_2000 = pd.read_excel(r"C:\Users\paulh\Desktop\FitIndex\Results_2000.xlsx")
-model_3000 = pd.read_excel(r"C:\Users\paulh\Desktop\FitIndex\Results_3000.xlsx")
-model_4000 = pd.read_excel(r"C:\Users\paulh\Desktop\FitIndex\Results_4000.xlsx")
-
-
-""" 
-MELTS_models = [model_1000, model_2000, model_3000, model_4000]
-"""
+plagio_meas = pd.read_excel(r"Data\Measured_compositions\Plagioclase_composition.xlsx")
+clino_meas = pd.read_excel(r"Data\Measured_compositions\Clinopyroxene_composition.xlsx")
+model_1000 = pd.read_excel(r"Data\MELTS_models\Results_1000.xlsx")
+model_2000 = pd.read_excel(r"Data\MELTS_models\Results_2000.xlsx")
+model_3000 = pd.read_excel(r"Data\MELTS_models\Results_3000.xlsx")
+model_4000 = pd.read_excel(r"Data\MELTS_models\Results_4000.xlsx")
 
 
 # plagioclase oxide concentrations of measurement
@@ -60,7 +50,7 @@ def Fitindex_plagioclase(model, plagio_meas):
 
 df_fit_plag = Fitindex_plagioclase(model_1000, plagio_meas)
 
-df_fit_plag.to_excel("FitIndex_plagioclase.xlsx")
+df_fit_plag.to_excel(r"Data\FitIndex\FitIndex_plagioclase.xlsx")
 
 
 def Fitindex_clinopyroxene(model, clino_meas):
@@ -84,7 +74,7 @@ def Fitindex_clinopyroxene(model, clino_meas):
 
 df_fit_cpx = Fitindex_clinopyroxene(model_1000, clino_meas)
 
-df_fit_cpx.to_excel("FitIndex_clinopyroxene.xlsx")
+df_fit_cpx.to_excel(r"Data\FitIndex\FitIndex_clinopyroxene.xlsx")
 
 
 def Fitindex_combined_1(model, clino_meas, plagio_meas):
@@ -112,7 +102,7 @@ def Fitindex_combined_1(model, clino_meas, plagio_meas):
 df_fit_combined_test = Fitindex_combined_1(model_1000, clino_meas, plagio_meas)
 df_fit_combined_test
 
-df_fit_combined_test.to_excel("FitIndex_combined_test.xlsx")
+df_fit_combined_test.to_excel(r"Data\FitIndex\FitIndex_combined_test.xlsx")
 
 
 def Fitindex_combined_2(model, clino_meas, plagio_meas):
@@ -146,4 +136,4 @@ def Fitindex_combined_2(model, clino_meas, plagio_meas):
 df_fit_combined = Fitindex_combined_2(model_1000, clino_meas, plagio_meas)
 df_fit_combined
 
-df_fit_combined.to_excel("FitIndex_combined_2_5.xlsx")
+df_fit_combined.to_excel(r"Data\FitIndex\FitIndex_combined_2_5.xlsx")

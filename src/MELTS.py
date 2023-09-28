@@ -1,9 +1,11 @@
 import PySulfSat as ss
 import pyMELTScalc as M
 import os
+import multiprocessing
 
 df = ss.import_data(
-    r"C:\Users\paulh\Desktop\FitIndex\Data\Glass_composition.xlsx", suffix="_Liq"
+    r"Data\Measured_compositions\Glass_composition.xlsx",
+    suffix="_Liq",
 )
 
 sample = df.iloc[0]
@@ -16,10 +18,10 @@ Oxygen_fugacity_range = []
 
 # List of names for results files
 Results = [
-    "Results_1000.xlsx",
-    "Results_2000.xlsx",
-    "Results_3000.xlsx",
-    "Results_4000.xlsx",
+    r"Data\MELTS_models\Results_1000.xlsx",
+    r"Data\MELTS_models\Results_2000.xlsx",
+    r"Data\MELTS_models\Results_3000.xlsx",
+    r"Data\MELTS_models\Results_4000.xlsx",
 ]
 
 
@@ -67,3 +69,8 @@ def MELTS_crystallization():
                 print(f"Deleted {file_name}")
             else:
                 print(f"{file_name} not found")
+
+
+if __name__ == "__main__":
+    multiprocessing.freeze_support()  # This line is not necessary for Streamlit apps
+    MELTS_crystallization()
