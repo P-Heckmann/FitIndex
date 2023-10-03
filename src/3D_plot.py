@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+
+# from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
 # Generate some random data
@@ -9,9 +10,9 @@ num_points = 100
 x = np.random.rand(num_points)
 y = np.random.rand(num_points)
 z = np.random.rand(num_points)
-color_values = np.random.rand(
-    num_points
-)  # This will be used for coloring the points
+
+# This will be used for coloring the points
+color_values = np.random.rand(num_points)
 
 # Create a 3D scatterplot
 fig = plt.figure()

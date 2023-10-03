@@ -105,7 +105,9 @@ def Fitindex_combined_1(model, clino_meas, plagio_meas):
     return df
 
 
-df_fit_combined_test = Fitindex_combined_1(model_1000, clino_meas, plagio_meas)
+df_fit_combined_test = Fitindex_combined_1(
+    model_1000, clino_meas, plagio_meas
+)
 df_fit_combined_test
 
 df_fit_combined_test.to_excel(r"Data\FitIndex\FitIndex_combined_test.xlsx")
@@ -128,7 +130,10 @@ def Fitindex_combined_2(model, clino_meas, plagio_meas):
             )
             F_plagioclase = (
                 abs(
-                    (model_1000[oxi_plag_mod][i] - plagio_meas[oxi_plag_me][0])
+                    (
+                        model_1000[oxi_plag_mod][i]
+                        - plagio_meas[oxi_plag_me][0]
+                    )
                 )
                 / plagio_meas[oxi_plag_me][0]
             )

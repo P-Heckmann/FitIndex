@@ -72,5 +72,6 @@ def MELTS_crystallization():
 
 
 if __name__ == "__main__":
-    multiprocessing.freeze_support()  # This line is not necessary for Streamlit apps
+    # This line is not necessary for Streamlit apps
+    multiprocessing.freeze_support()
     MELTS_crystallization()
