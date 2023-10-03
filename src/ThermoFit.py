@@ -1,7 +1,11 @@
 import pandas as pd
 
-plagio_meas = pd.read_excel(r"Data\Measured_compositions\Plagioclase_composition.xlsx")
-clino_meas = pd.read_excel(r"Data\Measured_compositions\Clinopyroxene_composition.xlsx")
+plagio_meas = pd.read_excel(
+    r"Data\Measured_compositions\Plagioclase_composition.xlsx"
+)
+clino_meas = pd.read_excel(
+    r"Data\Measured_compositions\Clinopyroxene_composition.xlsx"
+)
 model_1000 = pd.read_excel(r"Data\MELTS_models\Results_1000.xlsx")
 model_2000 = pd.read_excel(r"Data\MELTS_models\Results_2000.xlsx")
 model_3000 = pd.read_excel(r"Data\MELTS_models\Results_3000.xlsx")
@@ -67,7 +71,9 @@ def Fitindex_clinopyroxene(model, clino_meas):
             )
         F_clinopyroxene_data.append([F_clinopyroxene, temperature])
 
-    df = pd.DataFrame(F_clinopyroxene_data, columns=["fitindex", "temperature"])
+    df = pd.DataFrame(
+        F_clinopyroxene_data, columns=["fitindex", "temperature"]
+    )
 
     return df
 
@@ -121,7 +127,9 @@ def Fitindex_combined_2(model, clino_meas, plagio_meas):
                 / clino_meas[oxi_cpx_me][0]
             )
             F_plagioclase = (
-                abs((model_1000[oxi_plag_mod][i] - plagio_meas[oxi_plag_me][0]))
+                abs(
+                    (model_1000[oxi_plag_mod][i] - plagio_meas[oxi_plag_me][0])
+                )
                 / plagio_meas[oxi_plag_me][0]
             )
 
